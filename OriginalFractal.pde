@@ -6,26 +6,25 @@ public void setup()
 
 public void draw()
 {
-	Fractals(100, 100, 300);
+	Fractals(250, 250, 100);
 }
 
 public void Fractals(int x, int y, int siz)
 {
 	
-	if(siz <= 10)
+	if(siz < 10)
 	{
 		stroke(255);
-		fill(255);
-		rect(x, y, siz, siz/2);
+		// rect(x, y, siz, siz-5);
+		System.out.println("Stop");
 	}
 
 
 	else
 	{
 		stroke(255);
-		fill(255);
-		rect(x, y, siz, siz/2);
-		Fractals(x, y, siz-10);
-		Fractals(x + siz*2, y, siz-20);
+		ellipse(x, y, siz, siz);
+		rotate(PI/18);
+		Fractals(x-siz/3, y, siz/2);
 	}
 }

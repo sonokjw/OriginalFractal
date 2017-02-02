@@ -1,12 +1,26 @@
+int d = 0;
+
 public void setup()
 {
 	size(500, 500);
 	background(0);
+	Fractals(250, 250, 100);
 }
 
 public void draw()
 {
-	Fractals(250, 250, 100);
+	if(mousePressed == true)
+	{
+		
+		d = (int)(Math.random()*150);
+	}
+	background(0);
+	Fractals(mouseX, mouseY, d);
+	d+=2;
+	if(d>=150)
+	{
+		d =0;
+	}
 }
 
 public void Fractals(int x, int y, int siz)
@@ -14,7 +28,6 @@ public void Fractals(int x, int y, int siz)
 	
 	if(siz < 10)
 	{
-		stroke(255);
 		// rect(x, y, siz, siz-5);
 		System.out.println("Stop");
 	}
@@ -22,9 +35,20 @@ public void Fractals(int x, int y, int siz)
 
 	else
 	{
-		stroke(255);
+		noStroke();
+		fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
 		ellipse(x, y, siz, siz);
-		rotate(PI/18);
-		Fractals(x-siz/3, y, siz/2);
+			
+			Fractals(x-siz, y, siz/2);
+			Fractals(x-siz/2, y-siz/2, siz/2);
+			Fractals(x, y-siz, siz/2);
+			Fractals(x+siz/2, y-siz/2, siz/2);
+			Fractals(x+siz, y, siz/2);
+			Fractals(x+siz/2, y+siz/2, siz/2);
+			Fractals(x, y+siz, siz/2);
+			Fractals(x+siz/2, y+siz/2, siz/2);
+			Fractals(x, y+siz, siz/2);
+			Fractals(x-siz/2, y+siz/2, siz/2);
+		
 	}
 }

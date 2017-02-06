@@ -23,6 +23,7 @@ public void draw()
 	}
 }
 
+
 public void Fractals(int x, int y, int siz)
 {
 	

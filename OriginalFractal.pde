@@ -30,7 +30,7 @@ public void Fractals(int x, int y, int siz)
 	if(siz < 10)
 	{
 		// rect(x, y, siz, siz-5);
-		System.out.println("Stop");
+		ellipse(x, y, 0, 0);
 	}
 
 
